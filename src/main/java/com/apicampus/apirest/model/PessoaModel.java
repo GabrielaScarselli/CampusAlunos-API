@@ -1,6 +1,7 @@
 package com.apicampus.apirest.model;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,15 +17,16 @@ public abstract class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idpessoa;
-    private String nome_estudante;
+    @Column(name = "nome_estudante")
+    private String nomeEstudante;
 	private int idade;
 	private String sexo;
 
     public PessoaModel(){}
 
-    public PessoaModel(int idade, String sexo, String nome_estudante){
+    public PessoaModel(int idade, String sexo, String nomeEstudante){
         super();
-        this.nome_estudante = nome_estudante;
+        this.nomeEstudante = nomeEstudante;
         this.idade = idade;
         this.sexo = sexo;
     }
@@ -35,11 +37,11 @@ public abstract class PessoaModel {
     public void setIdPessoa(Long idPessoa) {
         this.idpessoa = idPessoa;
     }
-    public String getNome_estudante() {
-        return nome_estudante;
+    public String getNomeEstudante() {
+        return nomeEstudante;
     }
-    public void setNome_estudante(String nome_estudante) {
-        this.nome_estudante = nome_estudante;
+    public void setNomeEstudante(String nomeEstudante) {
+        this.nomeEstudante = nomeEstudante;
     }
     public int getIdade() {
         return idade;

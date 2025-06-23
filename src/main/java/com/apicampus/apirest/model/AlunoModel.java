@@ -15,12 +15,13 @@ public class AlunoModel extends PessoaModel{
 	private String curso;
 	private String situacao;
 	private String periodo_entrada;
+    private String turno;
 
     public AlunoModel(){}
 
-    public AlunoModel(String campus, String polo, String email_institucional, String coordenacao, String curso,
-    String situacao, String periodo_entrada){
-        super();
+    public AlunoModel(String nomeEstudante, int idade, String sexo, String campus, String polo, String email_institucional, String coordenacao, String curso,
+    String situacao, String periodo_entrada, String turno){
+        super(idade, sexo, nomeEstudante);
         this.campus = campus;
         this.polo = polo;
         this.email_institucional = email_institucional;
@@ -28,10 +29,11 @@ public class AlunoModel extends PessoaModel{
         this.curso = curso;
         this.situacao = situacao;
         this.periodo_entrada = periodo_entrada;
+        this.turno = turno;
     }
-    	public AlunoModel(String nome_estudante, String coordenacao, String curso, String situacao,
-			String periodo_entrada, String campus, String polo, String email_institucional, int idade, String sexo) {
-		super(idade, sexo, nome_estudante);
+    	public AlunoModel(String nomeEstudante, String coordenacao, String curso, String situacao,
+			String periodo_entrada, String campus, String polo, String email_institucional, int idade, String sexo, String turno) {
+		super(idade, sexo, nomeEstudante);
 		this.coordenacao = coordenacao;
 		this.curso = curso;
 		this.situacao = situacao;
@@ -39,6 +41,7 @@ public class AlunoModel extends PessoaModel{
         this.campus = campus;
         this.polo = polo;
         this.email_institucional = email_institucional;
+        this.turno = turno;
 	}
     public String getCampus() {
         return campus;
@@ -81,6 +84,14 @@ public class AlunoModel extends PessoaModel{
     }
     public void setPeriodo_entrada(String periodo_entrada) {
         this.periodo_entrada = periodo_entrada;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
     }
     
 }

@@ -30,8 +30,17 @@ public class AlunoService {
     public List<AlunoModel> buscarTodos(){
         return alunoRepository.findAll();
     }
-        public String deleteById(Long id){
+        public String deletar(Long id){
             alunoRepository.deleteById(id);
             return "Deletado";
+    }
+    public Optional<AlunoModel> buscarPorNomeEstudante(String nomeEstudante){
+        return alunoRepository.findByNomeEstudante(nomeEstudante);
+    }
+    public List<AlunoModel> buscarPorCurso(String curso){
+        return alunoRepository.findByCurso(curso);
+    }
+    public List<AlunoModel> buscarPorTurno(String turno){
+        return alunoRepository.findByTurno(turno);
     }
 }
