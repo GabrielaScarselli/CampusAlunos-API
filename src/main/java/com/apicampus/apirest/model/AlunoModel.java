@@ -3,18 +3,26 @@ package com.apicampus.apirest.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "aluno")
 @PrimaryKeyJoinColumn(name = "idpessoa")
 public class AlunoModel extends PessoaModel{
+    @NotBlank
     private String campus;
 	private String polo;
+    @NotBlank
 	private String email_institucional;
+    @NotBlank
 	private String coordenacao;
+    @NotBlank
 	private String curso;
+    @NotBlank
 	private String situacao;
+    @NotBlank
 	private String periodo_entrada;
+    @NotBlank
     private String turno;
 
     public AlunoModel(){}

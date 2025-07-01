@@ -9,6 +9,10 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -17,9 +21,14 @@ public abstract class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idpessoa;
+    @NotBlank
     @Column(name = "nome_estudante")
     private String nomeEstudante;
+    @NotNull
+    @Min(value= 18)
+    @Max(value= 90)
 	private int idade;
+    @NotBlank
 	private String sexo;
 
     public PessoaModel(){}
